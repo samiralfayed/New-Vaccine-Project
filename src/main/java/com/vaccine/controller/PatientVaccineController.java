@@ -24,6 +24,17 @@ public class PatientVaccineController {
         return patientVaccineService.savePatientVaccine(patientVaccine);
     }
 
+
+    @PutMapping("/{id}")
+    public PatientVaccine updatePatientVaccine(@PathVariable Long id, @RequestBody PatientVaccine updatedPatientVaccine) {
+        // Set the ID of the updated PatientVaccine to ensure we're updating the correct record
+        updatedPatientVaccine.setId(id);
+        return patientVaccineService.savePatientVaccine(updatedPatientVaccine);
+    }
+
+
+
+
     @DeleteMapping("/{id}")
     public void deletePatientVaccine(@PathVariable Long id) {
         patientVaccineService.deletePatientVaccine(id);
