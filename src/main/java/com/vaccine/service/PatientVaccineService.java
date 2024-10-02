@@ -9,4 +9,5 @@ public interface PatientVaccineService {
     List<PatientVaccine> getAllPatientVaccines();
     PatientVaccine savePatientVaccine(PatientVaccine patientVaccine);
     void deletePatientVaccine(Long id);
+
 }
