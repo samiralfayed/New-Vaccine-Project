@@ -19,7 +19,7 @@ public class PatientVaccineController {
         return patientVaccineService.getAllPatientVaccines();
     }
 
-    @PostMapping
+    @PostMapping(path =  "/add")
     public PatientVaccine addPatientVaccine(@RequestBody PatientVaccine patientVaccine) {
         return patientVaccineService.savePatientVaccine(patientVaccine);
     }
