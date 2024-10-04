@@ -19,6 +19,11 @@ public class PatientVaccineController {
         return patientVaccineService.getAllPatientVaccines();
     }
 
+    @GetMapping("/{id}") // New endpoint to fetch PatientVaccine by ID
+    public PatientVaccine getPatientVaccineById(@PathVariable Long id) {
+        return patientVaccineService.fetchPatientVaccineById(id);
+    }
+
     @PostMapping 
     @ResponseBody
     public PatientVaccine addPatientVaccine(@RequestBody PatientVaccine patientVaccine) {
