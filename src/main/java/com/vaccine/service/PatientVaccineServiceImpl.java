@@ -56,4 +56,9 @@ public class PatientVaccineServiceImpl implements PatientVaccineService {
     public void deletePatientVaccine(Long id) {
         patientVaccineJPARepo.deleteById(id);
     }
+
+    @Override
+    public PatientVaccine fetchPatientVaccineById(Long id) {
+        return patientVaccineJPARepo.findById(id).orElse(null);
+    }
 }
